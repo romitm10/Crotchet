@@ -194,11 +194,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Currency Switcher
-    currencyBtns.forEach(btn => {
+    document.querySelectorAll('.curr-btn').forEach(btn => {
       btn.addEventListener('click', () => {
-        currencyBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
         state.currency = btn.dataset.curr;
+        document.querySelectorAll('.curr-btn').forEach(b => {
+          b.classList.toggle('active', b.dataset.curr === state.currency);
+        });
         renderProducts();
         updateCartUI();
         if (state.activeProductInModal) {
