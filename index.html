@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Knot & Bloom Atelier | Handcrafted Slow-Fashion Crochet & Heirlooms</title>
   <meta name="description" content="Slow-made crochet creations by a working professional. Discover heirloom granny-square totes, organic amigurumi teddies, delicate hair accessories, and breathable summer tops.">
 
@@ -17,13 +17,22 @@
 <body>
 
   <!-- ========================================================================
-       TOP ANNOUNCEMENT BAR
+       TOP ANNOUNCEMENT MARQUEE
        ======================================================================== -->
   <div class="announcement-bar">
     <div class="marquee-content">
       <span>✨ <strong>Handmade with care by a working professional</strong></span>
       <span class="announcement-dot"></span>
       <span>📦 Free Insured Shipping on orders over <span id="announcement-threshold">₹1,499</span></span>
+      <span class="announcement-dot"></span>
+      <span>🧵 Custom commissions open for weddings, babies & gifts</span>
+      <span class="announcement-dot"></span>
+      <span>📺 Watch behind-the-scenes vlogs on our YouTube channel</span>
+      <span class="announcement-dot"></span>
+      <!-- Seamless loop duplicate -->
+      <span>✨ <strong>Handmade with care by a working professional</strong></span>
+      <span class="announcement-dot"></span>
+      <span>📦 Free Insured Shipping on orders over ₹1,499</span>
       <span class="announcement-dot"></span>
       <span>🧵 Custom commissions open for weddings, babies & gifts</span>
       <span class="announcement-dot"></span>
@@ -80,10 +89,51 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
             <span class="badge-counter cart-count-badge" style="display: none;">0</span>
           </button>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open Navigation Menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
         </div>
       </nav>
     </div>
   </header>
+
+  <!-- ========================================================================
+       MOBILE NAVIGATION SLIDE-IN DRAWER
+       ======================================================================== -->
+  <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+    <div class="mobile-nav-panel">
+      <div class="mobile-drawer-header">
+        <div style="display: flex; align-items: center; gap: 0.6rem;">
+          <svg class="logo-icon-svg" viewBox="0 0 40 40" fill="none" style="width: 30px; height: 30px;">
+            <circle cx="20" cy="20" r="19" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 3"/>
+            <path d="M12 28C14 26 18 22 24 16C26 14 29 11 31 13C33 15 30 18 28 20C22 26 18 30 16 32" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
+          <span class="brand-title" style="font-size: 1.25rem;">Knot & Bloom</span>
+        </div>
+        <button class="icon-btn" id="mobile-nav-close" style="width: 36px; height: 36px;">✕</button>
+      </div>
+
+      <ul class="mobile-nav-links">
+        <li><a href="#catalog" class="mobile-nav-link"><span>Seasonal Drops</span> →</a></li>
+        <li><a href="#anatomy" class="mobile-nav-link"><span>Craft Anatomy</span> →</a></li>
+        <li><a href="#artisan-story" class="mobile-nav-link"><span>The Maker</span> →</a></li>
+        <li><a href="#yarn-guide" class="mobile-nav-link"><span>Yarn Philosophy</span> →</a></li>
+        <li><a href="#youtube-studio" class="mobile-nav-link"><span>YouTube Studio</span> →</a></li>
+        <li><a href="#custom-commission" class="mobile-nav-link"><span>Custom Orders</span> →</a></li>
+      </ul>
+
+      <div style="margin-top: auto; padding-top: 1.5rem; border-top: 1px solid var(--border-light); display: flex; flex-direction: column; gap: 0.8rem;">
+        <a href="https://wa.me/919876543210" target="_blank" class="btn btn-whatsapp" style="width: 100%;">
+          <span>Chat with Maker on WhatsApp</span>
+        </a>
+        <div style="text-align: center; font-size: 0.78rem; color: var(--color-text-muted);">
+          Bengaluru, India • Worldwide Shipping
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- ========================================================================
        WOW-WORTHY HERO SECTION (EDITORIAL ASYMMETRIC COLLAGE)
@@ -120,15 +170,15 @@
           <div class="hero-stats-row">
             <div class="hero-stat-item">
               <span class="hero-stat-val">14.5 hrs</span>
-              <span class="hero-stat-lbl">Average Craft Time / Piece</span>
+              <span class="hero-stat-lbl">Avg Craft Time / Piece</span>
             </div>
             <div class="hero-stat-item">
               <span class="hero-stat-val">100%</span>
-              <span class="hero-stat-lbl">Combed Milk Cotton & Linen</span>
+              <span class="hero-stat-lbl">Natural Combed Yarn</span>
             </div>
             <div class="hero-stat-item">
               <span class="hero-stat-val">4.9 ★</span>
-              <span class="hero-stat-lbl">Beloved by 450+ Patrons</span>
+              <span class="hero-stat-lbl">450+ Happy Patrons</span>
             </div>
           </div>
         </div>
@@ -136,15 +186,15 @@
         <!-- Hero Showcase Composition Right -->
         <div class="hero-composition-wrap">
           <!-- Rotating Artisan Stamp Badge -->
-          <div class="artisan-rotating-stamp" style="top: -25px; right: -25px;">
+          <div class="artisan-rotating-stamp">
             <svg class="artisan-stamp-svg" viewBox="0 0 120 120">
               <path id="stamp-curve" fill="none" d="M 60, 60 m -46, 0 a 46,46 0 1,1 92,0 a 46,46 0 1,1 -92,0" />
-              <text font-size="9.5" font-weight="700" fill="#C87D6B" letter-spacing="2.2">
+              <text font-size="10.5" font-weight="700" fill="#C87D6B" letter-spacing="2.2">
                 <textPath href="#stamp-curve">100% HANDMADE • ATELIER QUALITY • REAL HANDS •</textPath>
               </text>
             </svg>
             <div class="stamp-center-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             </div>
           </div>
 
@@ -171,7 +221,7 @@
   </section>
 
   <!-- ========================================================================
-       THE ANATOMY OF A STITCH (WHY MACHINES CAN NEVER REPLICATE THIS)
+       THE ANATOMY OF A STITCH
        ======================================================================== -->
   <section class="anatomy-section" id="anatomy">
     <div class="container">
@@ -221,7 +271,7 @@
   </section>
 
   <!-- ========================================================================
-       PRODUCT CATALOG & INTERACTIVE FILTER (V2 ELEVATED BOUTIQUE)
+       PRODUCT CATALOG & INTERACTIVE FILTER
        ======================================================================== -->
   <section class="catalog-section" id="catalog">
     <div class="container">
@@ -229,11 +279,11 @@
         <span class="section-tag">Handcrafted Drops</span>
         <h2 class="section-title">The Seasonal Collection</h2>
         <p class="section-subtitle">
-          Small-batch releases & made-to-order commissions. Filter by category below to explore.
+          Small-batch releases & made-to-order commissions. Swipe or tap below to filter.
         </p>
       </div>
 
-      <!-- Category Filter Tabs -->
+      <!-- Category Filter Tabs (Swipeable on mobile) -->
       <div class="filter-container">
         <button class="filter-btn active" data-category="all">
           <span>✨ All Pieces</span>
@@ -259,7 +309,7 @@
 
       <!-- Dynamic Product Cards Grid -->
       <div class="products-grid" id="products-grid">
-        <!-- Rendered dynamically by js/app.js from js/products-data.js with bespoke authentic photography -->
+        <!-- Rendered dynamically by js/app.js from js/products-data.js -->
       </div>
     </div>
   </section>
@@ -365,7 +415,7 @@
         </p>
       </div>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.8rem;">
         <div style="background: var(--color-surface); padding: 2.2rem; border-radius: var(--radius-md); border: 1px solid var(--border-light); box-shadow: var(--shadow-sm);">
           <div style="font-size: 2.2rem; margin-bottom: 1rem;">☁️</div>
           <h4 style="font-size: 1.25rem; margin-bottom: 0.6rem;">Combed Milk Cotton</h4>
@@ -457,7 +507,7 @@
         <!-- Steps Info Left -->
         <div>
           <span class="story-badge-header">Bespoke Commissions</span>
-          <h2 style="font-size: 2.4rem; line-height: 1.22; margin-bottom: 1.2rem;">
+          <h2 style="font-size: clamp(2rem, 4vw, 2.4rem); line-height: 1.22; margin-bottom: 1.2rem;">
             Have a Dream Color or Custom Fit in Mind?
           </h2>
           <p style="font-size: 0.98rem; color: var(--color-text-muted); line-height: 1.65;">
@@ -707,7 +757,7 @@
             Because items are made in small batches, popular drops sell out quickly. Get notified for restocks.
           </p>
           <form onsubmit="event.preventDefault(); alert('Thank you! You are now subscribed to Knot & Bloom small drop alerts.');" style="display: flex; gap: 0.5rem;">
-            <input type="email" placeholder="Your email address" style="padding: 0.8rem 1.1rem; border-radius: var(--radius-pill); border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.06); color: #fff; font-size: 0.9rem; flex: 1;" required>
+            <input type="email" placeholder="Your email address" style="padding: 0.8rem 1.1rem; border-radius: var(--radius-pill); border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.06); color: #fff; font-size: 16px; flex: 1;" required>
             <button type="submit" class="btn btn-terracotta btn-sm">Join</button>
           </form>
         </div>

@@ -1,6 +1,6 @@
 <?php
 /**
- * The Front Page template for Knot & Bloom Atelier (Version 2)
+ * The Front Page template for Knot & Bloom Atelier (Version 2 Mobile Optimized)
  */
 
 get_header();
@@ -16,6 +16,10 @@ get_header();
     <span>🧵 Custom commissions open for weddings, babies & gifts</span>
     <span class="announcement-dot"></span>
     <span>📺 Watch behind-the-scenes vlogs on our YouTube channel</span>
+    <span class="announcement-dot"></span>
+    <span>✨ <strong>Handmade with care by a working professional</strong></span>
+    <span class="announcement-dot"></span>
+    <span>📦 Free Insured Shipping on orders over ₹1,499</span>
   </div>
 </div>
 
@@ -59,10 +63,37 @@ get_header();
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
           <span class="badge-counter cart-count-badge" style="display: none;">0</span>
         </button>
+
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open Navigation Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
       </div>
     </nav>
   </div>
 </header>
+
+<!-- Mobile Navigation Drawer -->
+<div class="mobile-nav-drawer" id="mobile-nav-drawer">
+  <div class="mobile-nav-panel">
+    <div class="mobile-drawer-header">
+      <span class="brand-title" style="font-size: 1.25rem;">Knot & Bloom</span>
+      <button class="icon-btn" id="mobile-nav-close" style="width: 36px; height: 36px;">✕</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="#catalog" class="mobile-nav-link"><span>Seasonal Drops</span> →</a></li>
+      <li><a href="#anatomy" class="mobile-nav-link"><span>Craft Anatomy</span> →</a></li>
+      <li><a href="#artisan-story" class="mobile-nav-link"><span>The Maker</span> →</a></li>
+      <li><a href="#yarn-guide" class="mobile-nav-link"><span>Yarn Philosophy</span> →</a></li>
+      <li><a href="#youtube-studio" class="mobile-nav-link"><span>YouTube Studio</span> →</a></li>
+      <li><a href="#custom-commission" class="mobile-nav-link"><span>Custom Orders</span> →</a></li>
+    </ul>
+    <div style="margin-top: auto; padding-top: 1.5rem; border-top: 1px solid var(--border-light);">
+      <a href="https://wa.me/919876543210" target="_blank" class="btn btn-whatsapp" style="width: 100%;">
+        Chat with Maker on WhatsApp
+      </a>
+    </div>
+  </div>
+</div>
 
 <!-- Hero Section -->
 <section class="hero-section" id="home">
@@ -87,15 +118,15 @@ get_header();
         <div class="hero-stats-row">
           <div class="hero-stat-item">
             <span class="hero-stat-val">14.5 hrs</span>
-            <span class="hero-stat-lbl">Average Craft Time / Piece</span>
+            <span class="hero-stat-lbl">Avg Craft Time / Piece</span>
           </div>
           <div class="hero-stat-item">
             <span class="hero-stat-val">100%</span>
-            <span class="hero-stat-lbl">Combed Milk Cotton & Linen</span>
+            <span class="hero-stat-lbl">Natural Combed Yarn</span>
           </div>
           <div class="hero-stat-item">
             <span class="hero-stat-val">4.9 ★</span>
-            <span class="hero-stat-lbl">Beloved by 450+ Patrons</span>
+            <span class="hero-stat-lbl">450+ Happy Patrons</span>
           </div>
         </div>
       </div>
@@ -113,34 +144,6 @@ get_header();
             <div class="secondary-card-sub">18 Hand-Blocked Squares</div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Craft Anatomy -->
-<section class="anatomy-section" id="anatomy">
-  <div class="container">
-    <div class="section-header-centered">
-      <span class="section-tag">Craftsmanship Truth</span>
-      <h2 class="section-title">The Anatomy of a Crochet Stitch</h2>
-      <p class="section-subtitle">Unlike knitted fabric, true crochet cannot be automated by any machine on Earth.</p>
-    </div>
-    <div class="anatomy-grid">
-      <div class="anatomy-card">
-        <span class="anatomy-card-number">01</span>
-        <h4>The Non-Replicable Loop</h4>
-        <p>Crochet requires dynamic live-loop manipulation using a single hook that no robotic arm can duplicate.</p>
-      </div>
-      <div class="anatomy-card">
-        <span class="anatomy-card-number">02</span>
-        <h4>Architectural Tension</h4>
-        <p>Engineered by a UX architect with reinforced handles that never sag under laptop weight.</p>
-      </div>
-      <div class="anatomy-card">
-        <span class="anatomy-card-number">03</span>
-        <h4>Zero Synthetic Plastic</h4>
-        <p>We strictly reject itchy acrylic fast-fashion yarns. Only combed milk cotton, bamboo silk, and velvet.</p>
       </div>
     </div>
   </div>

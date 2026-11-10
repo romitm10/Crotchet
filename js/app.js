@@ -1,6 +1,6 @@
 // ==========================================================================
 // KNOT & BLOOM ATELIER — VERSION 2 CORE INTERACTION ENGINE
-// Smooth animations, scroll reveals, cart management, currency & WhatsApp
+// Smooth animations, mobile nav drawer, cart management, currency & WhatsApp
 // ==========================================================================
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -26,6 +26,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const toastEl = document.getElementById('toast-notice');
   const currencyBtns = document.querySelectorAll('.curr-btn');
 
+  // Mobile Menu Elements
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileNavDrawer = document.getElementById('mobile-nav-drawer');
+  const mobileNavClose = document.getElementById('mobile-nav-close');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
   // Modal Elements
   const modalOverlay = document.getElementById('quickview-modal');
   const modalCloseBtn = document.getElementById('modal-close-btn');
@@ -37,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderProducts();
     updateCartUI();
     setupEventListeners();
+    setupMobileNav();
     setupDayNightSwitcher();
     setupCommissionWizard();
     setupScrollReveals();
@@ -95,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
       : '';
 
     card.innerHTML = `
-      <div class="product-image-wrap">
+      <div class="product-image-wrap" data-action="quickview" data-id="${product.id}" title="Tap to view details">
         <img src="${product.images[0]}" alt="${product.name}" class="product-img" loading="lazy">
         <div class="product-badges-layer">
           ${statusBadge}
@@ -131,6 +138,45 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
 
     return card;
+  }
+
+  // ------------------------------------------------------------------------
+  // MOBILE NAVIGATION DRAWER
+  // ------------------------------------------------------------------------
+  function setupMobileNav() {
+    if (mobileMenuBtn && mobileNavDrawer) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileNavDrawer.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+    }
+
+    if (mobileNavClose && mobileNavDrawer) {
+      mobileNavClose.addEventListener('click', () => {
+        closeMobileNav();
+      });
+    }
+
+    if (mobileNavDrawer) {
+      mobileNavDrawer.addEventListener('click', (e) => {
+        if (e.target === mobileNavDrawer) {
+          closeMobileNav();
+        }
+      });
+    }
+
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        closeMobileNav();
+      });
+    });
+  }
+
+  function closeMobileNav() {
+    if (mobileNavDrawer) {
+      mobileNavDrawer.classList.remove('open');
+      document.body.style.overflow = '';
+    }
   }
 
   // ------------------------------------------------------------------------
@@ -210,6 +256,7 @@ document.addEventListener('DOMContentLoaded', () => {
         closeCart();
         closeQuickViewModal();
         closeYouTubeModal();
+        closeMobileNav();
       }
     });
 
@@ -441,18 +488,18 @@ document.addEventListener('DOMContentLoaded', () => {
           <span class="badge badge-terracotta">${product.yarnType}</span>
         </div>
 
-        <h2 style="font-size: 2rem; line-height: 1.25; margin-top: 0.25rem;">${product.name}</h2>
+        <h2 style="font-size: 1.85rem; line-height: 1.25; margin-top: 0.25rem;">${product.name}</h2>
         
         <div style="display: flex; align-items: baseline; gap: 1rem;">
-          <span style="font-family: var(--font-serif); font-size: 1.7rem; font-weight: 700;" id="modal-price-display">
+          <span style="font-family: var(--font-serif); font-size: 1.6rem; font-weight: 700;" id="modal-price-display">
             ${formatPrice(product.price)}
           </span>
-          ${product.comparePrice ? `<span style="font-size: 1rem; text-decoration: line-through; color: var(--color-text-light);">${formatPrice(product.comparePrice)}</span>` : ''}
+          ${product.comparePrice ? `<span style="font-size: 0.95rem; text-decoration: line-through; color: var(--color-text-light);">${formatPrice(product.comparePrice)}</span>` : ''}
         </div>
 
-        <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.65;">${product.description}</p>
+        <p style="font-size: 0.94rem; color: var(--color-text-muted); line-height: 1.65;">${product.description}</p>
 
-        <div style="background: var(--color-bg-alt); padding: 1.2rem; border-radius: var(--radius-md); font-size: 0.85rem; display: flex; flex-direction: column; gap: 0.5rem;">
+        <div style="background: var(--color-bg-alt); padding: 1.1rem; border-radius: var(--radius-md); font-size: 0.85rem; display: flex; flex-direction: column; gap: 0.45rem;">
           <div><strong>⏳ Craft Lead Time:</strong> ${product.leadTime} (${product.craftTime})</div>
           <div><strong>📏 Sizing / Dimensions:</strong> ${product.dimensions}</div>
           <div><strong>🧼 Artisan Care:</strong> ${product.care}</div>
@@ -474,8 +521,8 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
         ` : ''}
 
-        <div style="display: flex; gap: 1rem; margin-top: 0.8rem;">
-          <button class="btn btn-primary" style="flex: 1;" id="modal-add-cart-btn">
+        <div style="display: flex; gap: 0.85rem; margin-top: 0.6rem; flex-wrap: wrap;">
+          <button class="btn btn-primary" style="flex: 1; min-width: 160px;" id="modal-add-cart-btn">
             Add to Woven Bag
           </button>
           <button class="btn btn-whatsapp" id="modal-wa-btn" title="Chat directly with designer">
@@ -640,14 +687,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     }, {
-      threshold: 0.12,
-      rootMargin: '0px 0px -40px 0px'
+      threshold: 0.1,
+      rootMargin: '0px 0px -30px 0px'
     });
 
     revealElements.forEach(el => {
       el.style.opacity = '0';
-      el.style.transform = 'translateY(24px)';
-      el.style.transition = 'opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1)';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
       observer.observe(el);
     });
   }
