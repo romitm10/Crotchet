@@ -1,0 +1,113 @@
+{% comment %}
+  Crochet Hero Section for Shopify Online Store 2.0 (Version 2)
+  File: sections/crochet-hero.liquid
+{% endcomment %}
+
+<section class="hero-section" id="shopify-crochet-hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content-left">
+        <div class="hero-pill-tag">
+          <span class="hero-pill-badge">🧶</span>
+          <span class="hero-pill-text">{{ section.settings.badge | default: 'Zero Factory Looms • 100% Artisan Handcrafted' }}</span>
+        </div>
+
+        <h1 class="hero-title">
+          {{ section.settings.title | default: 'Crafted with patience,' }}<br>
+          <span class="hero-title-accent">{{ section.settings.title_accent | default: 'slow stitches' }}</span> for mindful living.
+        </h1>
+
+        <p class="hero-description">
+          {{ section.settings.desc | default: 'Heirloom granny-square totes, cloud-soft amigurumi teddies, breathable mandala tops, and delicate floral accessories.' }}
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="{{ section.settings.button_link | default: '#catalog' }}" class="btn btn-primary">
+            <span>{{ section.settings.button_text | default: 'Explore Small Drops ↓' }}</span>
+          </a>
+          <a href="#custom-commission" class="btn btn-secondary">
+            <span>Commission a Custom Piece</span>
+          </a>
+        </div>
+
+        <div class="hero-stats-row">
+          <div class="hero-stat-item">
+            <span class="hero-stat-val">14.5 hrs</span>
+            <span class="hero-stat-lbl">Average Craft Time / Piece</span>
+          </div>
+          <div class="hero-stat-item">
+            <span class="hero-stat-val">100%</span>
+            <span class="hero-stat-lbl">Combed Milk Cotton & Linen</span>
+          </div>
+          <div class="hero-stat-item">
+            <span class="hero-stat-val">4.9 ★</span>
+            <span class="hero-stat-lbl">Beloved by 450+ Patrons</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-composition-wrap">
+        <div class="hero-main-card">
+          {% if section.settings.hero_image != blank %}
+            <img src="{{ section.settings.hero_image | image_url: width: 1000 }}" alt="Crochet Hero" class="hero-main-img">
+          {% else %}
+            <img src="{{ 'hero-showcase.jpg' | asset_url }}" alt="Crochet Showcase" class="hero-main-img">
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Crochet Hero V2",
+  "settings": [
+    {
+      "type": "text",
+      "id": "badge",
+      "label": "Badge Text",
+      "default": "Zero Factory Looms • 100% Artisan Handcrafted"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Crafted with patience,"
+    },
+    {
+      "type": "text",
+      "id": "title_accent",
+      "label": "Title Accent",
+      "default": "slow stitches"
+    },
+    {
+      "type": "textarea",
+      "id": "desc",
+      "label": "Description",
+      "default": "Heirloom granny-square totes, cloud-soft amigurumi teddies, breathable mandala tops, and delicate floral accessories."
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero Image"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Explore Small Drops ↓"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Crochet Hero V2"
+    }
+  ]
+}
+{% endschema %}

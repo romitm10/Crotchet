@@ -1,0 +1,98 @@
+{% comment %}
+  Crochet Showcase Section for Shopify Online Store 2.0
+  File: sections/crochet-showcase.liquid
+{% endcomment %}
+
+{{ 'crochet-atelier.css' | asset_url | stylesheet_tag }}
+
+<section class="catalog-section" id="shopify-crochet-catalog">
+  <div class="container">
+    <div class="section-header-centered">
+      <span class="section-tag">{{ section.settings.subheading | default: 'Handcrafted Drops' }}</span>
+      <h2 class="section-title">{{ section.settings.heading | default: 'The Seasonal Collection' }}</h2>
+      <p class="section-subtitle">{{ section.settings.text | default: 'Small-batch releases & made-to-order commissions.' }}</p>
+    </div>
+
+    <!-- Category Filter Tabs -->
+    <div class="filter-container">
+      <button class="filter-btn active" data-category="all">
+        <span>✨ All Pieces</span>
+      </button>
+      <button class="filter-btn" data-category="hair">
+        <span>🌸 Hair Accessories</span>
+      </button>
+      <button class="filter-btn" data-category="bags">
+        <span>👜 Handcrafted Bags</span>
+      </button>
+      <button class="filter-btn" data-category="teddies">
+        <span>🧸 Teddies & Amigurumi</span>
+      </button>
+      <button class="filter-btn" data-category="tops">
+        <span>🧶 Tops & Wearables</span>
+      </button>
+    </div>
+
+    <div class="products-grid" id="products-grid">
+      <!-- Injected by crochet-atelier.js or looped via Shopify Collections -->
+      {% if section.settings.collection != blank %}
+        {% for product in section.settings.collection.products limit: 12 %}
+          <article class="product-card" data-id="{{ product.id }}">
+            <div class="product-image-wrap">
+              <img src="{{ product.featured_image | image_url: width: 800 }}" alt="{{ product.title | escape }}" class="product-img" loading="lazy">
+              <div class="product-badges-layer">
+                <span class="badge badge-ready">⚡ Ready to Ship</span>
+              </div>
+            </div>
+            <div class="product-content">
+              <span class="product-category-sub">{{ product.type | default: 'Handmade Crochet' }}</span>
+              <h3 class="product-title">{{ product.title }}</h3>
+              <p class="product-short-desc">{{ product.description | strip_html | truncatewords: 15 }}</p>
+              <div class="product-footer">
+                <div class="price-box">
+                  <span class="price-current">{{ product.price | money }}</span>
+                </div>
+                <a href="{{ product.url }}" class="card-add-btn">View Piece</a>
+              </div>
+            </div>
+          </article>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Crochet Showcase",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Handcrafted Drops"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "The Seasonal Collection"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Description",
+      "default": "Small-batch releases & made-to-order commissions. Handcrafted by a working professional."
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Select Collection"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Crochet Showcase"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Knot & Bloom Atelier | Handcrafted Slow-Fashion Crochet & Heirlooms</title>
+  <meta name="description" content="Slow-made crochet creations by a working professional. Discover heirloom granny-square totes, organic amigurumi teddies, delicate hair accessories, and breathable summer tops.">
+
+  <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       TOP ANNOUNCEMENT BAR
+       ======================================================================== -->
+  <div class="announcement-bar">
+    <div class="marquee-content">
+      <span>✨ <strong>Handmade with care by a working professional</strong></span>
+      <span class="announcement-dot"></span>
+      <span>📦 Free Insured Shipping on orders over <span id="announcement-threshold">₹1,499</span></span>
+      <span class="announcement-dot"></span>
+      <span>🧵 Custom commissions open for weddings, babies & gifts</span>
+      <span class="announcement-dot"></span>
+      <span>📺 Watch behind-the-scenes vlogs on our YouTube channel</span>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       HEADER / NAVBAR
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar">
+        <!-- Logo -->
+        <a href="#home" class="brand-logo">
+          <!-- Custom Crochet Hook & Yarn Loop Logo SVG -->
+          <svg class="logo-icon-svg" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="19" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 3"/>
+            <path d="M12 28C14 26 18 22 24 16C26 14 29 11 31 13C33 15 30 18 28 20C22 26 18 30 16 32" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M10 14C12 10 18 9 22 13C26 17 25 23 21 27" stroke="#C87D6B" stroke-width="1.8" stroke-linecap="round"/>
+            <circle cx="13" cy="27" r="2.5" fill="#C87D6B"/>
+          </svg>
+          <div class="brand-text-wrap">
+            <span class="brand-title">Knot & Bloom</span>
+            <span class="brand-tagline">Atelier • Handcrafted</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <ul class="nav-menu">
+          <li><a href="#catalog" class="nav-link active">Seasonal Drops</a></li>
+          <li><a href="#anatomy" class="nav-link">Craft Anatomy</a></li>
+          <li><a href="#artisan-story" class="nav-link">The Maker</a></li>
+          <li><a href="#yarn-guide" class="nav-link">Yarn Philosophy</a></li>
+          <li><a href="#youtube-studio" class="nav-link">YouTube Studio</a></li>
+          <li><a href="#custom-commission" class="nav-link">Custom Orders</a></li>
+        </ul>
+
+        <!-- Nav Right Actions -->
+        <div class="nav-actions">
+          <!-- Currency Toggle -->
+          <div class="currency-toggle">
+            <button class="curr-btn active" data-curr="INR">₹ INR</button>
+            <button class="curr-btn" data-curr="USD">$ USD</button>
+          </div>
+
+          <!-- Direct WhatsApp Chat Link -->
+          <a href="https://wa.me/919876543210" target="_blank" class="icon-btn" title="Chat with Designer on WhatsApp">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" color="#25D366"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.274.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.144.39-.086.159.058 1.011.477 1.184.564.173.087.289.13.332.202.043.073.043.419-.101.824z"/></svg>
+          </a>
+
+          <!-- Cart Slide-Over Trigger -->
+          <button class="icon-btn" id="cart-toggle-btn" aria-label="Open Cart">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span class="badge-counter cart-count-badge" style="display: none;">0</span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       WOW-WORTHY HERO SECTION (EDITORIAL ASYMMETRIC COLLAGE)
+       ======================================================================== -->
+  <section class="hero-section" id="home">
+    <div class="container">
+      <div class="hero-grid">
+        <!-- Hero Text Left -->
+        <div class="hero-content-left">
+          <div class="hero-pill-tag">
+            <span class="hero-pill-badge">🧶</span>
+            <span class="hero-pill-text">Zero Factory Looms • 100% Artisan Handcrafted</span>
+          </div>
+
+          <h1 class="hero-title">
+            Crafted with patience,<br>
+            <span class="hero-title-accent">slow stitches</span> for mindful living.
+          </h1>
+
+          <p class="hero-description">
+            Heirloom granny-square totes, cloud-soft amigurumi teddies, breathable mandala tops, and delicate floral accessories. Every single loop was tied by real human hands.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#catalog" class="btn btn-primary">
+              <span>Explore Small Drops ↓</span>
+            </a>
+            <a href="#custom-commission" class="btn btn-secondary">
+              <span>Commission a Custom Piece</span>
+            </a>
+          </div>
+
+          <!-- Hero Metrics -->
+          <div class="hero-stats-row">
+            <div class="hero-stat-item">
+              <span class="hero-stat-val">14.5 hrs</span>
+              <span class="hero-stat-lbl">Average Craft Time / Piece</span>
+            </div>
+            <div class="hero-stat-item">
+              <span class="hero-stat-val">100%</span>
+              <span class="hero-stat-lbl">Combed Milk Cotton & Linen</span>
+            </div>
+            <div class="hero-stat-item">
+              <span class="hero-stat-val">4.9 ★</span>
+              <span class="hero-stat-lbl">Beloved by 450+ Patrons</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Showcase Composition Right -->
+        <div class="hero-composition-wrap">
+          <!-- Rotating Artisan Stamp Badge -->
+          <div class="artisan-rotating-stamp" style="top: -25px; right: -25px;">
+            <svg class="artisan-stamp-svg" viewBox="0 0 120 120">
+              <path id="stamp-curve" fill="none" d="M 60, 60 m -46, 0 a 46,46 0 1,1 92,0 a 46,46 0 1,1 -92,0" />
+              <text font-size="9.5" font-weight="700" fill="#C87D6B" letter-spacing="2.2">
+                <textPath href="#stamp-curve">100% HANDMADE • ATELIER QUALITY • REAL HANDS •</textPath>
+              </text>
+            </svg>
+            <div class="stamp-center-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+          </div>
+
+          <!-- Main Hero Showcase Frame -->
+          <div class="hero-main-card">
+            <img src="assets/hero-showcase.jpg" 
+                 alt="Luxury editorial flatlay of handmade crochet creations" 
+                 class="hero-main-img">
+          </div>
+
+          <!-- Secondary Floating Detail Card -->
+          <div class="hero-secondary-card">
+            <div class="secondary-card-thumb">
+              <img src="assets/bag-01-tote.jpg" alt="Meadow Tote detail">
+            </div>
+            <div>
+              <div class="secondary-card-title">The Meadow Tote</div>
+              <div class="secondary-card-sub">18 Hand-Blocked Squares</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       THE ANATOMY OF A STITCH (WHY MACHINES CAN NEVER REPLICATE THIS)
+       ======================================================================== -->
+  <section class="anatomy-section" id="anatomy">
+    <div class="container">
+      <div class="section-header-centered">
+        <span class="section-tag">Craftsmanship Truth</span>
+        <h2 class="section-title">The Anatomy of a Crochet Stitch</h2>
+        <p class="section-subtitle">
+          Unlike knitted fabric which industrial machines mass-produce by the millions, true crochet cannot be automated by any machine on Earth.
+        </p>
+      </div>
+
+      <div class="anatomy-grid">
+        <div class="anatomy-card">
+          <span class="anatomy-card-number">01</span>
+          <div class="anatomy-icon-wrap">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
+          </div>
+          <h4>The Non-Replicable Loop</h4>
+          <p>
+            Crochet requires dynamic live-loop manipulation using a single hook. No robotic arm or automated loom can duplicate this dexterity. Every crochet piece you ever touch was made by human hands.
+          </p>
+        </div>
+
+        <div class="anatomy-card">
+          <span class="anatomy-card-number">02</span>
+          <div class="anatomy-icon-wrap" style="background: var(--color-accent-terracotta-light); color: var(--color-accent-terracotta);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+          </div>
+          <h4>Architectural Tension</h4>
+          <p>
+            Designed by day's UX architect, every seam is calculated for real-world durability. Handles are reinforced with inner herringbone webbing so totes never sag under laptop weight.
+          </p>
+        </div>
+
+        <div class="anatomy-card">
+          <span class="anatomy-card-number">03</span>
+          <div class="anatomy-icon-wrap" style="background: var(--color-accent-honey-light); color: var(--color-accent-honey);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <h4>Zero Synthetic Plastic</h4>
+          <p>
+            We strictly reject itchy acrylic fast-fashion yarns. We use combed milk cotton, breathable bamboo silk, plant-based wood pulp raffia, and OEKO-TEX certified velvet.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       PRODUCT CATALOG & INTERACTIVE FILTER (V2 ELEVATED BOUTIQUE)
+       ======================================================================== -->
+  <section class="catalog-section" id="catalog">
+    <div class="container">
+      <div class="section-header-centered">
+        <span class="section-tag">Handcrafted Drops</span>
+        <h2 class="section-title">The Seasonal Collection</h2>
+        <p class="section-subtitle">
+          Small-batch releases & made-to-order commissions. Filter by category below to explore.
+        </p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="filter-container">
+        <button class="filter-btn active" data-category="all">
+          <span>✨ All Pieces</span>
+          <span class="filter-count">11</span>
+        </button>
+        <button class="filter-btn" data-category="hair">
+          <span>🌸 Hair Accessories</span>
+          <span class="filter-count">3</span>
+        </button>
+        <button class="filter-btn" data-category="bags">
+          <span>👜 Handcrafted Bags</span>
+          <span class="filter-count">3</span>
+        </button>
+        <button class="filter-btn" data-category="teddies">
+          <span>🧸 Teddies & Amigurumi</span>
+          <span class="filter-count">3</span>
+        </button>
+        <button class="filter-btn" data-category="tops">
+          <span>🧶 Tops & Wearables</span>
+          <span class="filter-count">3</span>
+        </button>
+      </div>
+
+      <!-- Dynamic Product Cards Grid -->
+      <div class="products-grid" id="products-grid">
+        <!-- Rendered dynamically by js/app.js from js/products-data.js with bespoke authentic photography -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       ARTISAN STORY: THE WORKING PROFESSIONAL'S DUAL LIFE
+       ======================================================================== -->
+  <section class="artisan-story-section" id="artisan-story">
+    <div class="container">
+      <div class="story-container">
+        <!-- Story Text Left -->
+        <div>
+          <span class="story-badge-header">The Maker Behind The Hook</span>
+          <h2 class="story-heading">
+            Engineered by Day.<br>
+            <span class="italic-serif" style="color: var(--color-primary);">Stitched by Dusk.</span>
+          </h2>
+          <p class="story-lead">
+            In a world overflowing with disposable fast fashion, owning a crochet piece means owning hours of another human being's time, devotion, and stillness.
+          </p>
+          <p class="story-body">
+            I am a full-time UX Architect in tech who discovered solace in yarn after staring at screens for 9 hours straight. Every handbag seam, teddy bear arm, and delicate lace stitch is calculated with structural precision, reinforced handles, and obsessive quality checks. No sweatshops. Just one artisan, quiet music, and thousands of mindful loops.
+          </p>
+          <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+            <a href="#youtube-studio" class="btn btn-secondary btn-sm">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" color="#FF0000"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+              Watch "Crochet With Me" Vlogs
+            </a>
+            <a href="https://instagram.com" target="_blank" class="btn btn-secondary btn-sm">
+              Follow @knotandbloom.studio
+            </a>
+          </div>
+        </div>
+
+        <!-- Interactive Dual Life Card Right -->
+        <div class="dual-life-card">
+          <div class="dual-switch-header">
+            <span style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-text-muted);">
+              Toggle Perspective
+            </span>
+            <div class="dual-tabs">
+              <button class="dual-tab-btn active" data-tab-target="tab-night">🌙 7 PM - Midnight (Maker)</button>
+              <button class="dual-tab-btn" data-tab-target="tab-day">☀️ 9 AM - 6 PM (Architect)</button>
+            </div>
+          </div>
+
+          <!-- Night Mode Pane -->
+          <div class="dual-content-pane active" id="tab-night">
+            <div class="dual-role-title">
+              <span>The Fiber Artist & Weaver</span>
+              <span style="font-size: 0.8rem; background: var(--color-primary-light); color: var(--color-primary); padding: 0.2rem 0.6rem; border-radius: var(--radius-pill); font-family: var(--font-sans);">Mindful Mode</span>
+            </div>
+            <p style="font-size: 0.92rem; color: var(--color-text-muted); line-height: 1.6;">
+              "Where tactile yarn balls replace wireframes. I count stitches, test tension, and hand-embroider every teddy face to give it a unique soul."
+            </p>
+            <div class="dual-traits-grid">
+              <div class="trait-box">
+                <h5>✨ Seamless Finishing</h5>
+                <p>Hidden slip stitches so threads never unravel through dozens of gentle washes.</p>
+              </div>
+              <div class="trait-box">
+                <h5>🌿 Zero Synthetic Acrylic</h5>
+                <p>We use combed milk cotton, bamboo silk, and OEKO-TEX certified velvet.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Day Mode Pane -->
+          <div class="dual-content-pane" id="tab-day">
+            <div class="dual-role-title">
+              <span>The Lead Systems Architect</span>
+              <span style="font-size: 0.8rem; background: var(--color-accent-terracotta-light); color: var(--color-accent-terracotta); padding: 0.2rem 0.6rem; border-radius: var(--radius-pill); font-family: var(--font-sans);">Engineering Mode</span>
+            </div>
+            <p style="font-size: 0.92rem; color: var(--color-text-muted); line-height: 1.6;">
+              "Applying user-centered ergonomics to fashion: strap drop lengths that don't bite shoulders, lined pockets for phone safety, and zero-crease hair accessories."
+            </p>
+            <div class="dual-traits-grid">
+              <div class="trait-box">
+                <h5>📐 Reinforced Ergonomics</h5>
+                <p>Bag straps backed with woven herringbone webbing to eliminate stretching under load.</p>
+              </div>
+              <div class="trait-box">
+                <h5>🔍 Structural Integrity</h5>
+                <p>Rigorous wash & tension stress-tests before any pattern is released to patrons.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       YARN & FIBER QUALITY GUIDE
+       ======================================================================== -->
+  <section class="catalog-section" id="yarn-guide" style="padding-top: 2rem; background: var(--color-bg-alt);">
+    <div class="container">
+      <div class="section-header-centered" style="margin-bottom: 3rem;">
+        <span class="section-tag" style="color: var(--color-accent-terracotta);">The Fiber Philosophy</span>
+        <h2 class="section-title">Why Our Stitches Feel Different</h2>
+        <p class="section-subtitle">
+          We refuse cheap itchy synthetic yarn. We source only breathable, baby-soft, hypoallergenic natural fibers.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem;">
+        <div style="background: var(--color-surface); padding: 2.2rem; border-radius: var(--radius-md); border: 1px solid var(--border-light); box-shadow: var(--shadow-sm);">
+          <div style="font-size: 2.2rem; margin-bottom: 1rem;">☁️</div>
+          <h4 style="font-size: 1.25rem; margin-bottom: 0.6rem;">Combed Milk Cotton</h4>
+          <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.6;">
+            Spun with fine combed cotton fibers. Velvety against delicate skin, non-itchy, and completely pill-resistant. Used in our hair clips and tops.
+          </p>
+        </div>
+
+        <div style="background: var(--color-surface); padding: 2.2rem; border-radius: var(--radius-md); border: 1px solid var(--border-light); box-shadow: var(--shadow-sm);">
+          <div style="font-size: 2.2rem; margin-bottom: 1rem;">🌿</div>
+          <h4 style="font-size: 1.25rem; margin-bottom: 0.6rem;">Bamboo Silk Blend</h4>
+          <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.6;">
+            Natural antibacterial, moisture-wicking cooling yarn with a luxurious liquid drape. Perfect for summer halter tops and airy cardigans.
+          </p>
+        </div>
+
+        <div style="background: var(--color-surface); padding: 2.2rem; border-radius: var(--radius-md); border: 1px solid var(--border-light); box-shadow: var(--shadow-sm);">
+          <div style="font-size: 2.2rem; margin-bottom: 1rem;">🧸</div>
+          <h4 style="font-size: 1.25rem; margin-bottom: 0.6rem;">OEKO-TEX Plush Velvet</h4>
+          <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.6;">
+            Certified free from harmful chemicals or heavy metals. Fluffy, cloud-like, and baby-safe for newborn nurseries and toddler hugs.
+          </p>
+        </div>
+
+        <div style="background: var(--color-surface); padding: 2.2rem; border-radius: var(--radius-md); border: 1px solid var(--border-light); box-shadow: var(--shadow-sm);">
+          <div style="font-size: 2.2rem; margin-bottom: 1rem;">👜</div>
+          <h4 style="font-size: 1.25rem; margin-bottom: 0.6rem;">Reinforced Cotton Cord</h4>
+          <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.6;">
+            Braided double-twisted cotton cord used for totes. Holds heavy weights including laptops and water bottles without stretching out.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       YOUTUBE CHANNEL & BEHIND-THE-SCENES
+       ======================================================================== -->
+  <section class="youtube-studio-section" id="youtube-studio">
+    <div class="container">
+      <div class="youtube-grid">
+        <!-- Text Left -->
+        <div>
+          <span class="yt-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+            YouTube Studio • 42K Makers
+          </span>
+          <h2 class="yt-heading">
+            Watch the Craft Unfold One Loop at a Time.
+          </h2>
+          <p class="yt-desc">
+            We document the full honest journey on our YouTube channel — from unboxing raw cotton skeins to late-night studio vlogs, blocking tutorials, and real time-lapse videos of every major piece being born.
+          </p>
+
+          <div style="display: flex; gap: 1.2rem; flex-wrap: wrap;">
+            <a href="https://youtube.com" target="_blank" class="btn btn-terracotta">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+              <span>Subscribe on YouTube</span>
+            </a>
+            <button class="btn btn-secondary" id="yt-play-trigger" style="background: rgba(255,255,255,0.1); color: #fff; border-color: rgba(255,255,255,0.25);">
+              <span>▶ Watch Trailer</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Video Card Right -->
+        <div class="yt-video-card" id="yt-video-card-thumb">
+          <img src="assets/bag-01-tote.jpg" 
+               alt="Crochet Studio Time-lapse" 
+               class="yt-thumbnail-img">
+          <div class="yt-play-button">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </div>
+          <div class="yt-card-caption">
+            <div class="yt-card-title">Crochet With Me: Making the Meadow Tote (18.5 Hours in 5 Minutes)</div>
+            <div class="yt-card-sub">Tutorial, Stitch Guide & Calming Lofi Vibes • 48K Views</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       CUSTOM COMMISSION CALCULATOR & INQUIRY WIZARD
+       ======================================================================== -->
+  <section class="commission-section" id="custom-commission">
+    <div class="container">
+      <div class="commission-box">
+        <!-- Steps Info Left -->
+        <div>
+          <span class="story-badge-header">Bespoke Commissions</span>
+          <h2 style="font-size: 2.4rem; line-height: 1.22; margin-bottom: 1.2rem;">
+            Have a Dream Color or Custom Fit in Mind?
+          </h2>
+          <p style="font-size: 0.98rem; color: var(--color-text-muted); line-height: 1.65;">
+            Because every single loop is done by hand, we happily tailor custom sizes, personalized baby initials, bridal accessory sets, or your favorite color palette.
+          </p>
+
+          <div class="comm-step-indicator">
+            <div class="step-item active">
+              <span class="step-number">1</span>
+              <div class="step-text">
+                <h5>Pick Silhouette & Item</h5>
+                <p>Select what you'd like crafted (Tote, Top, Plushie, or Clips).</p>
+              </div>
+            </div>
+            <div class="step-item active">
+              <span class="step-number">2</span>
+              <div class="step-text">
+                <h5>Choose Colorway & Fiber</h5>
+                <p>Pick warm pastels, earthy tones, or custom shades.</p>
+              </div>
+            </div>
+            <div class="step-item active">
+              <span class="step-number">3</span>
+              <div class="step-text">
+                <h5>1-Click Direct WhatsApp Quote</h5>
+                <p>Connect straight to the maker's WhatsApp with your specs pre-filled.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Form Right -->
+        <form class="wizard-form" id="commission-wizard-form">
+          <!-- Step 1: Category -->
+          <div class="form-group">
+            <label>1. Select Desired Piece:</label>
+            <div class="wizard-chip-grid">
+              <button type="button" class="chip-select-btn selected" data-chip-group="category" data-value="Handmade Tote / Bag">
+                👜 Custom Bag / Tote
+              </button>
+              <button type="button" class="chip-select-btn" data-chip-group="category" data-value="Made-to-Measure Top">
+                🧶 Custom Halter / Top
+              </button>
+              <button type="button" class="chip-select-btn" data-chip-group="category" data-value="Amigurumi Teddy / Plushie">
+                🧸 Keepsake Teddy Bear
+              </button>
+              <button type="button" class="chip-select-btn" data-chip-group="category" data-value="Hair Clips & Accessories">
+                🌸 Hair Clip / Headband Set
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 2: Color Mood -->
+          <div class="form-group">
+            <label>2. Desired Color Palette:</label>
+            <div class="wizard-chip-grid">
+              <button type="button" class="chip-select-btn selected" data-chip-group="palette" data-value="Earthy Woodland (Sage, Terracotta, Ochre)">
+                🍃 Earthy & Woodland
+              </button>
+              <button type="button" class="chip-select-btn" data-chip-group="palette" data-value="Pastel Dream (Lilac, Buttercup, Rose)">
+                🌸 Pastel & Cottagecore
+              </button>
+              <button type="button" class="chip-select-btn" data-chip-group="palette" data-value="Monochrome & Minimalist (Cream, Mocha, Charcoal)">
+                ☕ Neutral & Mocha
+              </button>
+              <button type="button" class="chip-select-btn" data-chip-group="palette" data-value="Custom Color (Discuss on WhatsApp)">
+                🎨 Custom Shade Match
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 3: Yarn Preference -->
+          <div class="form-group">
+            <label>3. Yarn Material:</label>
+            <div class="wizard-chip-grid">
+              <button type="button" class="chip-select-btn selected" data-chip-group="yarn" data-value="100% Combed Milk Cotton">
+                ☁️ Milk Cotton (Soft & Light)
+              </button>
+              <button type="button" class="chip-select-btn" data-chip-group="yarn" data-value="Plush Velvet Chenille">
+                🧸 Fluffy Velvet (Squishy)
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 4: Notes & Name -->
+          <div class="form-group">
+            <label for="commission-notes">4. Specific Notes, Dimensions or Target Date:</label>
+            <textarea id="commission-notes" class="form-textarea" rows="3" placeholder="e.g. Need bust size 34C for a holiday, or initials 'R & S' embroidered on teddy scarf..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="commission-name">Your Name:</label>
+            <input type="text" id="commission-name" class="form-input-text" placeholder="Enter your name" required>
+          </div>
+
+          <button type="submit" class="btn btn-whatsapp" style="width: 100%; padding: 1.1rem;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.274.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.144.39-.086.159.058 1.011.477 1.184.564.173.087.289.13.332.202.043.073.043.419-.101.824z"/></svg>
+            <span>Send Custom Request on WhatsApp</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       INSTAGRAM COMMUNITY & AESTHETIC GRID
+       ======================================================================== -->
+  <section class="instagram-section">
+    <div class="container">
+      <div class="section-header-centered" style="margin-bottom: 2.5rem;">
+        <span class="section-tag" style="color: #C13584;">@knotandbloom.studio</span>
+        <h2 class="section-title">Follow the Daily Loop</h2>
+        <p class="section-subtitle">
+          Join our cozy community on Instagram. Tag us to be featured on our patron wall!
+        </p>
+      </div>
+
+      <!-- Instagram Story Circles -->
+      <div class="insta-stories-row">
+        <div class="story-ring-item">
+          <div class="story-ring-circle">
+            <div class="story-ring-inner">
+              <img src="assets/bag-01-tote.jpg" alt="Bags Story">
+            </div>
+          </div>
+          <span class="story-ring-label">Bags Drop</span>
+        </div>
+        <div class="story-ring-item">
+          <div class="story-ring-circle">
+            <div class="story-ring-inner">
+              <img src="assets/plush-01-bear.jpg" alt="Teddies Story">
+            </div>
+          </div>
+          <span class="story-ring-label">Amigurumi</span>
+        </div>
+        <div class="story-ring-item">
+          <div class="story-ring-circle">
+            <div class="story-ring-inner">
+              <img src="assets/top-01-halter.jpg" alt="Wearables Story">
+            </div>
+          </div>
+          <span class="story-ring-label">Wearables</span>
+        </div>
+        <div class="story-ring-item">
+          <div class="story-ring-circle">
+            <div class="story-ring-inner">
+              <img src="assets/hair-01-daisy.jpg" alt="Hair Clips Story">
+            </div>
+          </div>
+          <span class="story-ring-label">Hair Clips</span>
+        </div>
+        <div class="story-ring-item">
+          <div class="story-ring-circle">
+            <div class="story-ring-inner">
+              <img src="assets/hero-showcase.jpg" alt="Studio Story">
+            </div>
+          </div>
+          <span class="story-ring-label">Studio Life</span>
+        </div>
+      </div>
+
+      <!-- 4-Column Instagram Grid with Real Product Photos -->
+      <div class="insta-grid">
+        <a href="https://instagram.com" target="_blank" class="insta-post-card">
+          <img src="assets/bag-02-tulip.jpg" alt="Crochet tulip pouch post">
+          <div class="insta-overlay">
+            <span>❤️ 1,480</span>
+            <span>💬 94</span>
+          </div>
+        </a>
+        <a href="https://instagram.com" target="_blank" class="insta-post-card">
+          <img src="assets/plush-03-froggy.jpg" alt="Crochet froggy post">
+          <div class="insta-overlay">
+            <span>❤️ 3,210</span>
+            <span>💬 188</span>
+          </div>
+        </a>
+        <a href="https://instagram.com" target="_blank" class="insta-post-card">
+          <img src="assets/top-02-cardigan.jpg" alt="Crochet cardigan post">
+          <div class="insta-overlay">
+            <span>❤️ 4,120</span>
+            <span>💬 245</span>
+          </div>
+        </a>
+        <a href="https://instagram.com" target="_blank" class="insta-post-card">
+          <img src="assets/hair-02-headband.jpg" alt="Crochet headband post">
+          <div class="insta-overlay">
+            <span>❤️ 1,190</span>
+            <span>💬 62</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: About -->
+        <div class="footer-col">
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.2rem;">
+            <svg class="logo-icon-svg" viewBox="0 0 40 40" fill="none" style="color: var(--color-accent-terracotta);">
+              <circle cx="20" cy="20" r="19" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 3"/>
+              <path d="M12 28C14 26 18 22 24 16C26 14 29 11 31 13C33 15 30 18 28 20C22 26 18 30 16 32" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+            </svg>
+            <span style="font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700;">Knot & Bloom</span>
+          </div>
+          <p>
+            Slow-crafted artisanal crochet made by a working professional. Designed with architectural precision, stitched with quiet devotion.
+          </p>
+          <div style="margin-top: 1.4rem; font-size: 0.88rem; color: #E0A96D;">
+            📍 Bengaluru, India • Shipping Worldwide
+          </div>
+        </div>
+
+        <!-- Col 2: Categories -->
+        <div class="footer-col">
+          <h4>Collections</h4>
+          <ul class="footer-links">
+            <li><a href="#catalog">Hair Accessories & Clips</a></li>
+            <li><a href="#catalog">Handcrafted Bags & Totes</a></li>
+            <li><a href="#catalog">Amigurumi Plushies & Teddies</a></li>
+            <li><a href="#catalog">Slow-Fashion Tops & Vests</a></li>
+            <li><a href="#custom-commission">Custom Bridal & Baby Gifts</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Community & Care -->
+        <div class="footer-col">
+          <h4>Artisan Care</h4>
+          <ul class="footer-links">
+            <li><a href="#yarn-guide">Yarn & Material Guide</a></li>
+            <li><a href="#artisan-story">Washing & Blocking Manual</a></li>
+            <li><a href="#youtube-studio">YouTube Video Guides</a></li>
+            <li><a href="#custom-commission">Commission Lead Times</a></li>
+            <li><a href="https://wa.me/919876543210" target="_blank">Direct WhatsApp Helpline</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Newsletter / Drop Alert -->
+        <div class="footer-col">
+          <h4>Drop Notifications</h4>
+          <p style="margin-bottom: 1.2rem;">
+            Because items are made in small batches, popular drops sell out quickly. Get notified for restocks.
+          </p>
+          <form onsubmit="event.preventDefault(); alert('Thank you! You are now subscribed to Knot & Bloom small drop alerts.');" style="display: flex; gap: 0.5rem;">
+            <input type="email" placeholder="Your email address" style="padding: 0.8rem 1.1rem; border-radius: var(--radius-pill); border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.06); color: #fff; font-size: 0.9rem; flex: 1;" required>
+            <button type="submit" class="btn btn-terracotta btn-sm">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 Knot & Bloom Atelier. All Rights Reserved. Handcrafted with love.
+        </div>
+        <div style="display: flex; gap: 1.8rem;">
+          <a href="#artisan-story">Privacy Policy</a>
+          <a href="#custom-commission">Terms of Craft</a>
+          <a href="https://wa.me/919876543210" target="_blank">WhatsApp Direct</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       SLIDE-OVER CART DRAWER
+       ======================================================================== -->
+  <div class="cart-drawer-overlay" id="cart-overlay">
+    <div class="cart-drawer">
+      <div class="cart-drawer-header">
+        <div class="cart-title">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span>Your Woven Bag</span>
+        </div>
+        <button class="icon-btn" id="cart-close-btn" style="width: 36px; height: 36px;">✕</button>
+      </div>
+
+      <!-- Free Shipping Tracker -->
+      <div class="free-shipping-progress">
+        <div class="shipping-msg" id="free-shipping-text">Add items for free shipping</div>
+        <div class="progress-track">
+          <div class="progress-fill" id="free-shipping-bar"></div>
+        </div>
+      </div>
+
+      <!-- Cart Item Rows -->
+      <div class="cart-items-body" id="cart-items-container">
+        <!-- Rendered by js/app.js -->
+      </div>
+
+      <!-- Cart Drawer Footer (Checkout) -->
+      <div class="cart-drawer-footer">
+        <div class="cart-subtotal-row">
+          <span>Subtotal</span>
+          <span class="cart-total-val" id="cart-subtotal-val">₹0</span>
+        </div>
+
+        <div class="cart-actions-column">
+          <!-- WhatsApp 1-Click Order Link -->
+          <button class="btn btn-whatsapp" id="cart-wa-checkout" style="width: 100%;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.274.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.144.39-.086.159.058 1.011.477 1.184.564.173.087.289.13.332.202.043.073.043.419-.101.824z"/></svg>
+            <span>Order via WhatsApp (Instant Confirmation)</span>
+          </button>
+
+          <!-- Standard Gateway (Shopify / WooCommerce ready) -->
+          <button class="btn btn-secondary" id="cart-standard-checkout" style="width: 100%; font-size: 0.9rem;">
+            <span>Standard Checkout (Card / NetBanking / UPI)</span>
+          </button>
+        </div>
+        <p style="font-size: 0.74rem; text-align: center; color: var(--color-text-muted); margin-top: 0.85rem;">
+          🔒 Secure 256-bit encrypted checkout. Handcrafted with natural fibers.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       QUICK VIEW PRODUCT MODAL
+       ======================================================================== -->
+  <div class="modal-overlay" id="quickview-modal">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">✕</button>
+      <div id="modal-card-content" style="display: contents;">
+        <!-- Injected dynamically by js/app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       YOUTUBE EMBED MODAL
+       ======================================================================== -->
+  <div class="modal-overlay" id="yt-video-modal">
+    <div style="max-width: 850px; width: 100%; position: relative; background: #000; border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--shadow-lg);">
+      <button class="modal-close-btn" id="yt-modal-close" style="top: 12px; right: 12px; background: rgba(255,255,255,0.3); color: #fff;">✕</button>
+      <iframe id="yt-iframe-player" style="width: 100%; height: 100%; border: none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       TOAST NOTIFICATION
+       ======================================================================== -->
+  <div class="toast-notice" id="toast-notice">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+    <span class="toast-text">Item added to your bag!</span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/brand-config.js"></script>
+  <script src="js/products-data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

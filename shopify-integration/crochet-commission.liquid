@@ -1,0 +1,123 @@
+{% comment %}
+  Crochet Bespoke Commission Section for Shopify
+  File: sections/crochet-commission.liquid
+{% endcomment %}
+
+<section class="commission-section" id="custom-commission-section">
+  <div class="container">
+    <div class="commission-box">
+      <div>
+        <span class="story-badge-header">{{ section.settings.tag | default: 'Bespoke Commissions' }}</span>
+        <h2 style="font-size: 2.2rem; line-height: 1.25; margin-bottom: 1rem;">
+          {{ section.settings.title | default: 'Have a Dream Color or Custom Fit in Mind?' }}
+        </h2>
+        <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.6;">
+          {{ section.settings.body | default: 'Because every stitch is handmade, we happily create custom sizes, personalized baby initials, or matching sets.' }}
+        </p>
+
+        <div class="comm-step-indicator">
+          <div class="step-item active">
+            <span class="step-number">1</span>
+            <div class="step-text">
+              <h5>Select Piece & Yarn</h5>
+              <p>Pick your silhouette and touch-friendly fiber.</p>
+            </div>
+          </div>
+          <div class="step-item active">
+            <span class="step-number">2</span>
+            <div class="step-text">
+              <h5>Choose Palette</h5>
+              <p>Earth tones, pastels, or matching wedding shades.</p>
+            </div>
+          </div>
+          <div class="step-item active">
+            <span class="step-number">3</span>
+            <div class="step-text">
+              <h5>Direct WhatsApp Chat</h5>
+              <p>Instantly confirm with the maker directly.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <form class="wizard-form" id="shopify-commission-form">
+        <div class="form-group">
+          <label>1. Select Desired Piece:</label>
+          <div class="wizard-chip-grid">
+            <button type="button" class="chip-select-btn selected" data-chip-group="category" data-value="Handmade Tote / Bag">
+              👜 Custom Bag / Tote
+            </button>
+            <button type="button" class="chip-select-btn" data-chip-group="category" data-value="Made-to-Measure Top">
+              🧶 Custom Halter / Top
+            </button>
+            <button type="button" class="chip-select-btn" data-chip-group="category" data-value="Amigurumi Teddy / Plushie">
+              🧸 Keepsake Teddy Bear
+            </button>
+            <button type="button" class="chip-select-btn" data-chip-group="category" data-value="Hair Clips & Accessories">
+              🌸 Hair Clip / Headband Set
+            </button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>2. Desired Color Palette:</label>
+          <div class="wizard-chip-grid">
+            <button type="button" class="chip-select-btn selected" data-chip-group="palette" data-value="Earthy Woodland">
+              🍃 Earthy & Woodland
+            </button>
+            <button type="button" class="chip-select-btn" data-chip-group="palette" data-value="Pastel Dream">
+              🌸 Pastel & Cottagecore
+            </button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Your Name & Custom Details:</label>
+          <input type="text" id="shopify-comm-name" class="form-input-text" placeholder="Your Name" required style="margin-bottom: 0.8rem;">
+          <textarea id="shopify-comm-notes" class="form-textarea" rows="3" placeholder="Sizing, specific colors, or gift deadlines..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-whatsapp" style="width: 100%;">
+          <span>Chat with Maker on WhatsApp</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Crochet Commission",
+  "settings": [
+    {
+      "type": "text",
+      "id": "tag",
+      "label": "Tag",
+      "default": "Bespoke Commissions"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Have a Dream Color or Custom Fit in Mind?"
+    },
+    {
+      "type": "textarea",
+      "id": "body",
+      "label": "Body Description",
+      "default": "Every stitch is handcrafted by a working professional. We tailor custom sizes and bespoke color palettes."
+    },
+    {
+      "type": "text",
+      "id": "whatsapp_number",
+      "label": "WhatsApp Phone (with country code, no +)",
+      "default": "919876543210"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Crochet Commission"
+    }
+  ]
+}
+{% endschema %}
